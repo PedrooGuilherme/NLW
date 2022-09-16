@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* Lista */
+ul{
+    list-style: none;
+}
+
+/* Fundo em si */
+body{
+    background-image: url(./Imagens/Fundo.jpg);
+    background-position:top center;
+    background-size: 100% auto;/*100% da largura da página e altura automática*/
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter',sans-serif;
+    line-height: 160%;/* Altura da Linha */
+}
+
+header{
+    padding-top: 32px;
+    height: calc(120px + 32px);
+}
+header img{ /* imagem do header */
+    border-radius: 50%;
+    width: 100%;
+}
+header div{
+    width: 120px;
+    margin: auto;/* Alinhamento de imagens*/
+    background-image:linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex;/* Por ter uma imagen apenas, a div é alinhada À imagen*/
+    padding: 4px;
+
+    transition: transform .3s;/* Quando o comando receber trnsform a transição durará 3segundos */
+}
+
+header div:hover{
+    transform: scale(1.1);
+}
+
+/*main * { Tudo que está dentro de main receb(indicador universal)/*
+    /*border: 1px solid red*/
+
+
+main{
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;/* Cálculo automático das margens- Primeiro Em cima e Embaixo- Segundo Laterais Centralizada*/
+    
+    display: grid;
+    gap: 24px;
+
+
+}
+
+
+/*ANimação das listas */
+main section{
+    animation: fromBottom .4s backwards;
+}
+
+main section:nth-child(1){
+    animation-delay: 0s;
+}
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+main section:nth-child(3){
+    animation-delay: .8s;
+}
+section{
+    color: white;
+    background-image:linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+
+}
+
+section h2{
+    letter-spacing: -0.47px;
+}
+
+section p{
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+
+
+}
+
+section ul{
+    display: flex;/* Display - Visualização das caixas*/
+    flex-wrap: wrap;
+    gap: 16px;/* Só funciona com o display flex */
+    margin-top: 24px;
+}
+
+section ul li{
+    transition: transform .3s;
+
+}
+
+section ul li:hover{/* Ao passar o mouse */
+    transform: scale(1.1);
+
+}
+section div{
+    background-color:#2A2634;
+    padding:32px;
+    padding-top: 24;
+    border-radius: 8px;
+    /* border-top: 4px solid red; Borda Em cima somente */
+
+}
+
+.games-list img{
+    border-radius: 8px;
+    width: 90px;
+}
+
+.channel-list img{
+    border-radius: 50%;/* Arredondamento da imagem */
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+header div{
+    animation: fromTop .7s .4s backwards/*dá prioridade Às prioridades abaaixo*/;
+}
+/* Animation */
+
+@keyframes fromTop {
+    from{
+        opacity: 0;
+        transform:  translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
